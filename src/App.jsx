@@ -2,6 +2,25 @@
 import './App.css'
 import Form from './components/Form'
 import Search from './components/Search'
+import React from "react";
+import { BaseColaboradores } from "./colaboradores"; // aqui estoy importando la lista de colaboradores del colaboradores.JS
+
+const App = () => {
+  return (
+    <div>
+      <h1>Lista de Colaboradores</h1>
+      <ul>
+        {BaseColaboradores.map((colaborador) => (
+          <li key={colaborador.id}>
+            <strong>{colaborador.nombre}</strong> - {colaborador.cargo}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
 
 function App() {
   // const [colaboradores, setColaboradores] = useState(BaseColaboradores);
@@ -12,7 +31,7 @@ function App() {
   return (
     <>
       <div className='container text-center'>
-      <h1>BD Colaboradores</h1>
+        <h1>BD Colaboradores</h1>
         <div className='col-lg-4 col-md-12 px-lg-3 px-1'>
           <Search />
         </div>
