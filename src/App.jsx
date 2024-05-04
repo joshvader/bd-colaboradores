@@ -1,26 +1,10 @@
-// import { useState } from 'react'
+import React, { useState } from "react";
+import Alert from "./components/Alert";
 import './App.css'
 import Form from './components/Form'
 import Search from './components/Search'
-import React from "react";
 import { BaseColaboradores } from "./colaboradores"; // aqui estoy importando la lista de colaboradores del colaboradores.JS
 
-const App = () => {
-  return (
-    <div>
-      <h1>Lista de Colaboradores</h1>
-      <ul>
-        {BaseColaboradores.map((colaborador) => (
-          <li key={colaborador.id}>
-            <strong>{colaborador.nombre}</strong> - {colaborador.cargo}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default App;
 
 function App() {
   // const [colaboradores, setColaboradores] = useState(BaseColaboradores);
