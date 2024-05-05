@@ -1,8 +1,9 @@
-import React from "react";
-import { BaseColaboradores } from "./colaboradores";
-import { Table } from "react-bootstrap";
 
-const Listado = () => {
+import { Table } from "react-bootstrap";
+import PropTypes from 'prop-types';
+
+
+const List = ({ colaboradores, eliminarColaborador }) => {
     return (
         <div className="container mt-4">
             <h1>Listado de Colaboradores</h1>
@@ -17,8 +18,8 @@ const Listado = () => {
                         <th>Teléfono</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {BaseColaboradores.map((colaborador) => (
+                <tbody className="table-group-divider">
+                    {colaboradores.map((colaborador) => (
                         <tr key={colaborador.id}>
                             <td>{colaborador.id}</td>
                             <td>{colaborador.nombre}</td>
@@ -26,6 +27,11 @@ const Listado = () => {
                             <td>{colaborador.edad}</td>
                             <td>{colaborador.cargo}</td>
                             <td>{colaborador.telefono}</td>
+                            <td>
+                            <span className="btnEliminar" onClick={() => eliminarColaborador(colaborador)}>
+                                ❌
+                            </span>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -33,5 +39,9 @@ const Listado = () => {
         </div>
     );
 };
+List.propTypes = {
+    colaboradores: PropTypes.array.isRequired,
+    eliminarColaborador: PropTypes.func.isRequired
+};
 
-export default Listado;
+export default List;

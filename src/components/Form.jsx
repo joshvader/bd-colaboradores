@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 
+// eslint-disable-next-line react/prop-types, no-unused-vars
 const Form = ({onSubmit, setAlert}) => {
   const [colaborador, setColaborador] = useState({
     nombre: "",
@@ -35,6 +36,8 @@ const Form = ({onSubmit, setAlert}) => {
       });
       return;
     }
+
+    onSubmit(colaborador);
     // Reinicia el formulario y muestra la alerta de éxito
     setColaborador({
       nombre: "",
