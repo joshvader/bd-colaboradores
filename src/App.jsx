@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <div className='container text-center'>
-        <h1>BD Colaboradores</h1>
+        <h1 className="text-white">BD Colaboradores</h1>
         <div className='col-lg-4 col-md-12 px-lg-3 px-1'>
           <Search search={search} onChange={handleChange}/>
         </div>

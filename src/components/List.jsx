@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const List = ({ colaboradores, eliminarColaborador }) => {
     return (
         <div className="container mt-4">
-            <h1>Listado de Colaboradores</h1>
+            <h1 className="text-white">Listado de Colaboradores</h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -16,6 +16,7 @@ const List = ({ colaboradores, eliminarColaborador }) => {
                         <th>Edad</th>
                         <th>Cargo</th>
                         <th>Teléfono</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">

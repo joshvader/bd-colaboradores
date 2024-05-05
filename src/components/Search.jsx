@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types';
 
 const Search = ({search, onChange}) => {
   return (
@@ -15,6 +16,10 @@ const Search = ({search, onChange}) => {
       </form>
     </>
   )
+}
+Search.propTypes = {
+  search: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default Search
